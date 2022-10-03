@@ -1,14 +1,17 @@
 package tests.day16_notations;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import utilities.TestBase;
 
-public class C06_SoftAssert extends TestBase {
+public class C06_SoftAssert  {
 
     /*
       Softaseertion baslangic ve bitis satirlari arasindaki
@@ -23,9 +26,13 @@ public class C06_SoftAssert extends TestBase {
      simdi ise softAssert static olmadigi icin obje olusturup obje uzerinden softAsserti kullanacagim
      */
 
-    @Test
+    @Test(groups = "grup2")
     public void test01() {
         //1- amazon anasayfaya gidin
+        WebDriverManager.chromedriver().setup();
+        WebDriver driver=new ChromeDriver();
+
+
         driver.get("https://amazon.com");
 
         //2- title'in Amazon icerdigini test edin

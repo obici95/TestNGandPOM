@@ -1,5 +1,5 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
-<suite name="belirli package calistirma">
+<suite name="belirli package calistirma" verbose="">
     <test name="paket">
         <packages>
             <package name="tests.day17_pom"></package>

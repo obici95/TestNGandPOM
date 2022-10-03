@@ -27,7 +27,7 @@ public class C04DependsOnMethods  {
 
     @AfterClass
     public void tearDown(){
-        driver.quit();
+        driver.close();
     }
 
     @Test
@@ -47,6 +47,11 @@ public class C04DependsOnMethods  {
         WebElement sonucYaziElementi=driver.findElement(By.xpath("//div[@class='a-section a-spacing-small a-spacing-top-small']"));
 
         Assert.assertTrue(sonucYaziElementi.getText().contains("Nutella"));
+    }
+
+    @Test(groups = {"grup1", "grup2"})
+    public void test04(){
+        System.out.println("Bak bu calisti");
     }
 
     /*

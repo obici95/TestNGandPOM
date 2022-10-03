@@ -17,13 +17,13 @@ public class ConfigReader {
         String dosyaYOlu="configuration.properties";
         try {
             FileInputStream fis=new FileInputStream(dosyaYOlu);
-            //fis dosyaYolunu tanumladigimiz configuration.properties dosyasini okudu
+            //fis dosyaYolunu tanimladigimiz configuration.properties dosyasini okudu
                          properties=new Properties();
                          properties.load(fis); //fis'in okudugu bilgileri propertis'e yukledi           // itiraz etti ya yoksa diyor.Bunu cozmek icin ya class isminin yanina throws deriz ya da try cath atariz.
                                                                                                      //Throws dersek nereden kullanirsak kullanirsak kullanalim orada da Throws yapmamzi gerekiyr
                                                                                                      //Her seferinde Throws Throws yapmak yerine try cath kullanacagiz
                                                                                                     //dosya yolunu okuduk simdi propertis objemize yukleyelim
-        } catch (IOException e) {                                                                   //ya yukleyemezsem dedi ben de bir cath daha attim
+        } catch (IOException e) { // IOException exception'larin atasi oldugu icin 1 tanesi yetti.                                                                  //ya yukleyemezsem dedi ben de bir cath daha attim
             e.printStackTrace();
         }
 

@@ -3,6 +3,7 @@ package utilities;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
 
@@ -40,7 +41,7 @@ public class Driver {
     o yuzden bana bir sey dondurmesi icin, biz getDriver methodunun return type'ini WebDriver yapacagiz
 
      */
-    //driver'i her iki method'da da kullanacagim icin class level'da driver olusturuyorum  public ve static  yapiyorum.
+    //driver'i her iki method'da da kullanacagim icin class level'da driver olusturuyorum   ve static  yapiyorum.
     static WebDriver driver;
 
     public static WebDriver getDriver(){ // Biz getDriver methodunu her cagirdigimizda getDriver methodundaki driver'a new Chrome degerini atiyor
@@ -60,6 +61,10 @@ public class Driver {
                 case "firefox":
                     WebDriverManager.firefoxdriver().setup();
                     driver = new FirefoxDriver();
+                    break;
+                case "headless-chrome" :
+                    WebDriverManager.chromedriver().setup();
+                    driver=new ChromeDriver(new ChromeOptions().setHeadless(true)); // bu  yazdigim chromu gostermeden arka planda calisip testlerini yapar.
                     break;
 
             }

@@ -7,7 +7,7 @@ public class C01_YeniDriverIlkClass { // artik driver'i kullanmak icin extends'e
 
 
 
-    @Test
+    @Test(groups = "grup1")
     public void test01() { //ve artik Driver class'inin altindaki getDriver methodunu kullanacagim
         Driver.getDriver().get("https://amazon.com");
 
